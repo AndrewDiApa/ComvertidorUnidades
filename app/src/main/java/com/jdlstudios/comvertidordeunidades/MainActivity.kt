@@ -14,12 +14,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var metros:Long
-
-        binding.btnCentimetro.setOnClickListener {
-            metros = binding.editTextMetros.text.toString().toLong()
-            Log.d("metros","$metros")
-        }
 
     }
 }

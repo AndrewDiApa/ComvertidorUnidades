@@ -4,83 +4,254 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo_aot"
     tools:context=".MainActivity">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/fondo_aot"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Convertidor de unidades"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.083"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.042" />
-
-    <EditText
-        android:id="@+id/editText_metros"
-        android:layout_width="152dp"
-        android:layout_height="43dp"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="20dp"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.096"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <TextView
-        android:id="@+id/equivalencia"
-        android:layout_width="152dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="10dp"
-        android:text=""
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_metros" />
-
-    <Button
-        android:id="@+id/btn_equivalir"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="35dp"
-        android:text="Equivalir"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/equivalencia" />
+        android:layout_height="match_parent"
+        android:background="@drawable/fondo_degradado_tranparente_black">
 
-    <Button
-        android:id="@+id/btn_centimetro"
-        android:layout_width="137dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="50dp"
-        android:text="centimetro"
-        app:layout_constraintBottom_toBottomOf="@+id/editText_metros"
-        app:layout_constraintStart_toEndOf="@+id/editText_metros"
-        app:layout_constraintTop_toTopOf="@+id/editText_metros" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Convertidor de unidades"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btn_milimetro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="milimetro"
-        android:paddingHorizontal="25dp"
-        android:layout_marginStart="50dp"
-        app:layout_constraintBottom_toBottomOf="@+id/equivalencia"
-        app:layout_constraintStart_toEndOf="@+id/equivalencia"
-        app:layout_constraintTop_toTopOf="@+id/equivalencia" />
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/linearLayoutIngreso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="40dp"
+            android:layout_marginHorizontal="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ingrese Nro de Metros:"
+                android:textColor="@color/white"
+                android:textSize="16sp"/>
+
+            <EditText
+                android:id="@+id/editText_metros"
+                android:background="@color/gray_transparent1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textAlignment="center"
+                android:paddingVertical="8dp"
+                android:hint="00.00"
+                android:textColor="@color/white"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.096"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/linearLayoutEgreso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linearLayoutIngreso">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/labelTransformado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="a Kilometros:"
+                android:textColor="@color/white"
+                android:textSize="16sp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/labelResultado"
+                android:background="@color/gray_transparent1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="00.00"
+                tools:text="123.33"
+                android:textAlignment="center"
+                android:paddingVertical="8dp"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linearLayoutEgreso">
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:padding="16dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:orientation="vertical">
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/button_circular_white"
+                        android:text="Km"/>
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:layout_marginTop="8dp"
+                        android:layout_gravity="center"
+                        android:text="Kilómetro"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:orientation="vertical">
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/button_circular_white"
+                        android:text="hm"/>
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:layout_marginTop="8dp"
+                        android:layout_gravity="center"
+                        android:text="Hectómetro"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:orientation="vertical">
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/button_circular_white"
+                        android:text="dm"/>
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:layout_marginTop="8dp"
+                        android:layout_gravity="center"
+                        android:text="Decámetro"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:orientation="vertical">
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/button_circular_white"
+                        android:text="m"/>
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:layout_marginTop="8dp"
+                        android:layout_gravity="center"
+                        android:text="Metro"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:orientation="vertical">
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/button_circular_white"
+                        android:text="dm"/>
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:layout_marginTop="8dp"
+                        android:layout_gravity="center"
+                        android:text="Decímetro"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:orientation="vertical">
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/button_circular_white"
+                        android:text="cm"/>
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:layout_marginTop="8dp"
+                        android:layout_gravity="center"
+                        android:text="Centímetro"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:orientation="vertical">
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/button_circular_white"
+                        android:text="mm"/>
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:layout_marginTop="8dp"
+                        android:layout_gravity="center"
+                        android:text="Milímetro"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </HorizontalScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
