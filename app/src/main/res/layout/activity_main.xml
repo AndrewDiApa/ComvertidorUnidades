@@ -117,6 +117,7 @@
                     android:padding="8dp"
                     android:orientation="vertical">
                     <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnAKm"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:textColor="@color/white"
@@ -136,6 +137,7 @@
                     android:padding="8dp"
                     android:orientation="vertical">
                     <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnAHm"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:textColor="@color/white"
@@ -155,6 +157,7 @@
                     android:padding="8dp"
                     android:orientation="vertical">
                     <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnADm"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:textColor="@color/white"
@@ -174,6 +177,7 @@
                     android:padding="8dp"
                     android:orientation="vertical">
                     <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnAM"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:textColor="@color/white"
@@ -193,6 +197,7 @@
                     android:padding="8dp"
                     android:orientation="vertical">
                     <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnADcm"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:textColor="@color/white"
@@ -212,6 +217,7 @@
                     android:padding="8dp"
                     android:orientation="vertical">
                     <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnACcm"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:textColor="@color/white"
@@ -231,6 +237,7 @@
                     android:padding="8dp"
                     android:orientation="vertical">
                     <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnAMmm"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:textColor="@color/white"
